@@ -180,29 +180,17 @@ GET /api/transactions/customer/C100
 5. Application Structure
 
 The application is organized into separate layers:
-
 Entity
-
 Transaction
-
 Represents a transaction stored in the H2 database.
-
 Repository
-
 TransactionRepository
-
 Uses Spring Data JPA to access transaction data.
-
 Service
-
 TransactionService
-
 Contains the main business logic, validation, duplicate checking, transaction retrieval, status update, and customer transaction retrieval.
-
 Controller
-
 TransactionController
-
 Provides the REST API endpoints and connects HTTP requests to the service layer.
 
 
@@ -215,14 +203,8 @@ Automated tests were created using JUnit and Spring Boot MockMvc.
 The tests cover the four required scenarios:
 
 1. A transaction is created successfully.
-
-
 2. An invalid transaction is rejected.
-
-
 3. A duplicate Transaction ID is rejected.
-
-
 4. A request for a transaction that does not exist is handled correctly.
 
 The tests verify HTTP responses rather than only checking whether the application starts.
